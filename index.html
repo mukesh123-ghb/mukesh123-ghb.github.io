@@ -86,25 +86,31 @@
 
     /* FULL-SCREEN HOMEPAGE PHOTO */
 
-    .hero {
-      min-height: calc(100vh - 85px);
+   
+.hero {
+  width: 100%;
+  min-height: 0;
 
-      background:
-        linear-gradient(
-          rgba(0,0,0,0.08),
-          rgba(0,0,0,0.18)
-        ),
-        url("images/homepage.JPG");
-      background-size: cover;
-      background-position: center top;
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.08),
+      rgba(0,0,0,0.18)
+    ),
+    url("images/homepage.jpg");
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  background-size: 100% 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
 
-      padding: 100px 30px;
-      text-align: center;
-    }
+  aspect-ratio: 2 / 3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 100px 30px;
+  text-align: center;
+}
 
     /* TEXT OVER PHOTOGRAPH */
 

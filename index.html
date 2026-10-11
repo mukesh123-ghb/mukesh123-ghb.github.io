@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +9,9 @@
   <title>Sam's Journal</title>
 
   <style>
+
+    /* COLORS */
+
     :root {
       --cream: #F5F0E5;
       --brown: #493528;
@@ -28,6 +32,7 @@
       color: var(--brown);
       font-family: Georgia, serif;
     }
+
 
     /* NAVIGATION BAR */
 
@@ -61,12 +66,14 @@
       opacity: 0.6;
     }
 
-    /* PLUMERIA HOME / ABOUT BUTTON */
+
+    /* PINK PLUMERIA HOME BUTTON */
 
     .flower-link {
       display: flex;
       justify-content: center;
       align-items: center;
+
       width: 50px;
       height: 50px;
       justify-self: center;
@@ -84,112 +91,125 @@
       height: 43px;
     }
 
-    /* FULL-SCREEN HOMEPAGE PHOTO */
 
-   
-.hero {
-  width: 100%;
-  min-height: 0;
+    /* FULL-SCREEN STORY SECTIONS */
 
-  background:
-    linear-gradient(
-      rgba(0,0,0,0.08),
-      rgba(0,0,0,0.18)
-    ),
-    url("images/homepage.jpg");
+    .story-panel {
+      min-height: 100vh;
+      min-height: 100svh;
+      width: 100%;
 
-  background-size: 100% 100%;
-  background-position: center top;
-  background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-  aspect-ratio: 2 / 3;
+      text-align: center;
+      padding: 80px 10%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: 100px 30px;
-  text-align: center;
-}
-
-    /* TEXT OVER PHOTOGRAPH */
-
-    .hero h1 {
-      color: var(--cream);
-      font-size: clamp(32px, 5vw, 70px);
-      font-weight: normal;
-      font-style: italic;
-      line-height: 1.3;
-      max-width: 800px;
-      margin: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
-    /* CREAM ABOUT SECTION */
 
-   
-/* ABOUT SECTION */
+    /* FIRST FULL-SCREEN PHOTOGRAPH */
 
-.about {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 650px;
-  background: var(--cream);
-}
+    .story-one {
+      background-image:
+        linear-gradient(
+          rgba(0,0,0,0.15),
+          rgba(0,0,0,0.15)
+        ),
+        url("images/homepage.jpg");
 
-.about-photo {
-  width: 100%;
-  height: 100%;
-  min-height: 650px;
-  object-fit: cover;
-  display: block;
-}
+      background-position: center top;
+    }
 
-.about-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 70px 12%;
-  color: var(--brown);
-}
 
-.about-text h2 {
-  font-size: clamp(30px, 3vw, 48px);
-  font-weight: normal;
-  font-style: italic;
-  margin: 0 0 25px;
-}
+    /* SECOND FULL-SCREEN PHOTOGRAPH */
 
-.about-text p {
-  font-size: 17px;
-  line-height: 1.9;
-  margin: 0 0 20px;
-}
+    .story-two {
+      background-image:
+        linear-gradient(
+          rgba(0,0,0,0.15),
+          rgba(0,0,0,0.15)
+        ),
+        url("images/homepage.jpg");
 
-/* PHONE LAYOUT */
+      background-position: center center;
+    }
 
-@media (max-width: 700px) {
-  .about {
-    grid-template-columns: 1fr;
-  }
 
-  .about-photo {
-    height: 420px;
-    min-height: 0;
-  }
+    /* THIRD FULL-SCREEN PHOTOGRAPH */
 
-  .about-text {
-    padding: 60px 30px;
-  }
+    .story-three {
+      background-image:
+        linear-gradient(
+          rgba(0,0,0,0.15),
+          rgba(0,0,0,0.15)
+        ),
+        url("images/homepage.jpg");
 
-  .about-text h2 {
-    font-size: 32px;
-  }
+      background-position: center bottom;
+    }
 
-  .about-text p {
-    font-size: 16px;
-  }
-}
+
+    /* SENTENCES OVER PHOTOGRAPHS */
+
+    .story-panel p {
+      color: var(--cream);
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 4vw, 58px);
+      font-weight: normal;
+      font-style: italic;
+      line-height: 1.5;
+
+      max-width: 900px;
+      margin: 0;
+
+      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+
+
+    /* ABOUT SECTION */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 650px;
+      background: var(--cream);
+    }
+
+    .about-photo {
+      width: 100%;
+      height: 100%;
+      min-height: 650px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .about-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      padding: 70px 12%;
+      color: var(--brown);
+    }
+
+    .about-text h2 {
+      font-size: clamp(30px, 3vw, 48px);
+      font-weight: normal;
+      font-style: italic;
+      margin: 0 0 25px;
+    }
+
+    .about-text p {
+      font-size: 17px;
+      line-height: 1.9;
+      margin: 0 0 20px;
+    }
 
 
     /* MOBILE DESIGN */
@@ -217,28 +237,44 @@
         height: 38px;
       }
 
-      .hero {
-        min-height: 85vh;
+      .story-panel {
+        padding: 60px 8%;
       }
 
-      .hero h1 {
-        font-size: 36px;
+      .story-panel p {
+        font-size: clamp(24px, 6vw, 36px);
       }
 
-      .about h2 {
-        font-size: 27px;
+      .about {
+        grid-template-columns: 1fr;
       }
 
-      .about p {
-        font-size: 18px;
+      .about-photo {
+        height: 420px;
+        min-height: 0;
       }
+
+      .about-text {
+        padding: 60px 30px;
+      }
+
+      .about-text h2 {
+        font-size: 32px;
+      }
+
+      .about-text p {
+        font-size: 16px;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- NAVIGATION BAR -->
+  <!-- NAVIGATION -->
 
   <nav aria-label="Main navigation">
 
@@ -263,7 +299,8 @@
       INSPIRATION
     </a>
 
-    <!-- CLICKABLE PINK PLUMERIA -->
+
+    <!-- PLUMERIA FLOWER -->
 
     <a href="index.html"
        class="flower-link"
@@ -311,58 +348,80 @@
 
   </nav>
 
-  <!-- FULL-SCREEN OPENING PHOTO -->
 
   <main>
 
-    <section class="hero">
+    <!-- SCREEN 1 -->
 
-      <h1>
-        love 
-      </h1>
+    <section class="story-panel story-one">
+
+      <p>
+        sentence 1 
+      </p>
 
     </section>
 
+
+    <!-- SCREEN 2 -->
+
+    <section class="story-panel story-two">
+
+      <p>
+        sentence 2 
+      </p>
+
+    </section>
+
+
+    <!-- SCREEN 3 -->
+
+    <section class="story-panel story-three">
+
+      <p>
+        sentence 3 
+      </p>
+
+    </section>
+
+
     <!-- ABOUT SECTION -->
 
-   
-<!-- ABOUT SECTION -->
+    <section class="about" id="about">
 
-<section class="about" id="about">
+      <!-- PHOTO ON LEFT -->
 
-  <!-- PHOTO ON LEFT -->
+      <img
+        src="images/about.jpg"
+        alt="A photograph introducing Sam"
+        class="about-photo"
+      >
 
-  <img
-    src="images/about.JPG"
-    alt="A photograph introducing Sam"
-    class="about-photo"
-  >
 
-  <!-- WRITING ON RIGHT -->
+      <!-- WRITING ON RIGHT -->
 
-  <div class="about-text">
+      <div class="about-text">
 
-    <h2> </h2>
+        <h2>
+          hi! i'm sam 
+        </h2>
 
-    <p>
-      fill in this paragraph
-    </p>
+        <p>
+          fill in 
+        </p>
 
-    <p>
-      fill in this paragraph 
-    </p>
+        <p>
+         fill in 
+        </p>
 
-    <p>
-     
-    </p>
+        <p>
+          
+        </p>
 
-  </div>
+      </div>
 
-</section>
-
+    </section>
 
   </main>
 
 </body>
 </html>
-

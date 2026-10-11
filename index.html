@@ -1,427 +1,131 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Sam's Journal</title>
-
-  <style>
-
-    /* COLORS */
-
-    :root {
-      --cream: #F5F0E5;
-      --brown: #493528;
-      --pink: #E8A9B5;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--cream);
-      color: var(--brown);
-      font-family: Georgia, serif;
-    }
-
-
-    /* NAVIGATION BAR */
-
-    nav {
-      position: relative;
-      z-index: 10;
-      width: 100%;
-      min-height: 85px;
-      background: var(--cream);
-
-      display: grid;
-      grid-template-columns:
-        1fr 1.2fr 1fr 1.3fr 1fr 65px;
-
-      align-items: center;
-      gap: 12px;
-      padding: 12px 35px;
-    }
-
-    nav a {
-      color: var(--brown);
-      text-decoration: none;
-      text-align: center;
-      font-size: 12px;
-      letter-spacing: 1px;
-      line-height: 1.5;
-      transition: opacity 0.3s ease;
-    }
-
-    nav a:hover {
-      opacity: 0.6;
-    }
-
-
-    /* PINK PLUMERIA HOME BUTTON */
-
-    .flower-link {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      width: 50px;
-      height: 50px;
-      justify-self: center;
-
-      transition: transform 0.3s ease;
-    }
-
-    .flower-link:hover {
-      transform: rotate(15deg) scale(1.1);
-      opacity: 1;
-    }
-
-    .flower-link svg {
-      width: 43px;
-      height: 43px;
-    }
-
-
-    /* FULL-SCREEN STORY SECTIONS */
-
-    .story-panel {
-      min-height: 100vh;
-      min-height: 100svh;
-      width: 100%;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      text-align: center;
-      padding: 80px 10%;
-
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-
-
-    /* FIRST FULL-SCREEN PHOTOGRAPH */
-
-    .story-one {
-      background-image:
-        linear-gradient(
-          rgba(0,0,0,0.15),
-          rgba(0,0,0,0.15)
-        ),
-        url("images/homepage.JPG");
-
-      background-position: center top;
-    }
-
-
-    /* SECOND FULL-SCREEN PHOTOGRAPH */
-
-    .story-two {
-      background-image:
-        linear-gradient(
-          rgba(0,0,0,0.15),
-          rgba(0,0,0,0.15)
-        ),
-        url("images/homepage.JPG");
-
-      background-position: center center;
-    }
-
-
-    /* THIRD FULL-SCREEN PHOTOGRAPH */
-
-    .story-three {
-      background-image:
-        linear-gradient(
-          rgba(0,0,0,0.15),
-          rgba(0,0,0,0.15)
-        ),
-        url("images/homepage.JPG");
-
-      background-position: center bottom;
-    }
-
-
-    /* SENTENCES OVER PHOTOGRAPHS */
-
-    .story-panel p {
-      color: var(--cream);
-      font-family: Georgia, serif;
-      font-size: clamp(28px, 4vw, 58px);
-      font-weight: normal;
-      font-style: italic;
-      line-height: 1.5;
-
-      max-width: 900px;
-      margin: 0;
-
-      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
-    }
-
-
-    /* ABOUT SECTION */
-
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 650px;
-      background: var(--cream);
-    }
-
-    .about-photo {
-      width: 100%;
-      height: 100%;
-      min-height: 650px;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
-
-    .about-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-
-      padding: 70px 12%;
-      color: var(--brown);
-    }
-
-    .about-text h2 {
-      font-size: clamp(30px, 3vw, 48px);
-      font-weight: normal;
-      font-style: italic;
-      margin: 0 0 25px;
-    }
-
-    .about-text p {
-      font-size: 17px;
-      line-height: 1.9;
-      margin: 0 0 20px;
-    }
-
-
-    /* MOBILE DESIGN */
-
-    @media (max-width: 700px) {
-
-      nav {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-        padding: 15px 10px;
-      }
-
-      nav a {
-        font-size: 10px;
-        letter-spacing: 0.5px;
-      }
-
-      .flower-link {
-        width: 42px;
-        height: 42px;
-      }
-
-      .flower-link svg {
-        width: 38px;
-        height: 38px;
-      }
-
-      .story-panel {
-        padding: 60px 8%;
-      }
-
-      .story-panel p {
-        font-size: clamp(24px, 6vw, 36px);
-      }
-
-      .about {
-        grid-template-columns: 1fr;
-      }
-
-      .about-photo {
-        height: 420px;
-        min-height: 0;
-      }
-
-      .about-text {
-        padding: 60px 30px;
-      }
-
-      .about-text h2 {
-        font-size: 32px;
-      }
-
-      .about-text p {
-        font-size: 16px;
-      }
-
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="visa-bot automatically monitors embassy and airline campaign pages, then sends the important updates straight to your Telegram. Simple setup, runs in the background, and free to self-host.">
+    <meta name="keywords" content="background-jobs, clean-architecture, cqrs, csharp, ddd, docker, dotnet, entity-framework-core, mediatr, postgresql, react, rss, self-hosted, typescript, web-scraping, visa, embassy, telegram bot">
+    <meta name="author" content="mukesh123-ghb">
+    <meta property="og:title" content="visa-bot - Never Miss a Visa Appointment">
+    <meta property="og:description" content="Automatically watches embassy and airline pages. Get instant Telegram alerts when something changes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/mukesh123-ghb/visa-bot">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>visa-bot - Never Miss a Visa Appointment</title>
 </head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); color: #333; line-height: 1.7;">
+    <div style="max-width: 900px; margin: 0 auto; padding: 40px 20px;">
+        <!-- Header Section -->
+        <header style="text-align: center; background: #ffffff; border-radius: 16px; padding: 50px 30px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); margin-bottom: 30px;">
+            <h1 style="font-size: 2.8em; margin: 0 0 10px 0; color: #1a1a2e; letter-spacing: -1px;">🗓️ visa-bot - Never Miss a Visa Appointment Again</h1>
+            <p style="font-size: 1.2em; color: #555; max-width: 600px; margin: 20px auto 30px auto;">Stop refreshing embassy websites all day. Let visa-bot watch the pages for you and send instant Telegram alerts when something important pops up.</p>
+            <a href="https://github.com/mukesh123-ghb/visa-bot" style="display: inline-block; background: #e94560; color: #ffffff; padding: 18px 45px; border-radius: 50px; text-decoration: none; font-size: 1.3em; font-weight: 700; box-shadow: 0 6px 20px rgba(233, 69, 96, 0.4); transition: transform 0.2s;">🚀 Download visa-bot Now</a>
+        </header>
 
+        <!-- What It Does -->
+        <section style="background: #ffffff; border-radius: 16px; padding: 40px 35px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); margin-bottom: 30px;">
+            <h2 style="font-size: 2em; color: #1a1a2e; border-bottom: 3px solid #e94560; padding-bottom: 10px;">🔍 What Does visa-bot Do?</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">Imagine you need a visa appointment, but slots fill up in minutes. Or a flight deal appears and disappears within the hour. visa-bot is your 24/7 digital assistant that:</p>
+            <ul style="list-style-type: none; padding: 0; font-size: 1.05em;">
+                <li style="background: #f0f4f8; border-radius: 8px; padding: 12px 18px; margin-bottom: 10px;">🛰️ <strong>Watches embassy websites</strong> and airline campaign pages for you</li>
+                <li style="background: #f0f4f8; border-radius: 8px; padding: 12px 18px; margin-bottom: 10px;">📡 <strong>Detects updates</strong> like new appointment slots, deadline changes, or promo fares</li>
+                <li style="background: #f0f4f8; border-radius: 8px; padding: 12px 18px; margin-bottom: 10px;">📲 <strong>Publishes only the important stuff</strong> directly to your Telegram chat</li>
+                <li style="background: #f0f4f8; border-radius: 8px; padding: 12px 18px;">⚡ <strong>Runs quietly in the background</strong> — no constant checking required</li>
+            </ul>
+        </section>
 
-<body>
+        <!-- Key Features -->
+        <section style="background: #ffffff; border-radius: 16px; padding: 40px 35px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); margin-bottom: 30px;">
+            <h2 style="font-size: 2em; color: #1a1a2e; border-bottom: 3px solid #e94560; padding-bottom: 10px;">✨ Key Features</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                <div style="background: #fafbfc; border-radius: 12px; padding: 25px; border: 1px solid #eee;">
+                    <h3 style="color: #e94560; font-size: 1.3em; margin-top: 0;">🔄 Real-time Monitoring</h3>
+                    <p style="margin: 0;">Scans multiple embassy and airline pages every few minutes. Detects even small changes in content or structure.</p>
+                </div>
+                <div style="background: #fafbfc; border-radius: 12px; padding: 25px; border: 1px solid #eee;">
+                    <h3 style="color: #e94560; font-size: 1.3em; margin-top: 0;">🤖 Smart Telegram Integration</h3>
+                    <p style="margin: 0;">Receives instant notifications with details about the change. Filters out noise — you only get what matters.</p>
+                </div>
+                <div style="background: #fafbfc; border-radius: 12px; padding: 25px; border: 1px solid #eee;">
+                    <h3 style="color: #e94560; font-size: 1.3em; margin-top: 0;">🖥️ Simple Web Dashboard</h3>
+                    <p style="margin: 0;">A clean, easy-to-use interface built with React. Manage your watched pages, view history, and adjust settings — no technical skills needed.</p>
+                </div>
+                <div style="background: #fafbfc; border-radius: 12px; padding: 25px; border: 1px solid #eee;">
+                    <h3 style="color: #e94560; font-size: 1.3em; margin-top: 0;">📦 Self-Hosted & Private</h3>
+                    <p style="margin: 0;">Your data stays yours. Run it on your own computer or server with Docker. Full control, no third-party cloud required.</p>
+                </div>
+                <div style="background: #fafbfc; border-radius: 12px; padding: 25px; border: 1px solid #eee;">
+                    <h3 style="color: #e94560; font-size: 1.3em; margin-top: 0;">🔧 Reliable & Production-Grade</h3>
+                    <p style="margin: 0;">Built on .NET 9 with Clean Architecture principles. Uses proven patterns (CQRS, DDD) for stability and performance.</p>
+                </div>
+                <div style="background: #fafbfc; border-radius: 12px; padding: 25px; border: 1px solid #eee;">
+                    <h3 style="color: #e94560; font-size: 1.3em; margin-top: 0;">🔔 Custom Notifications</h3>
+                    <p style="margin: 0;">Set your own rules for what triggers an alert. Choose specific keywords, date ranges, or page sections to watch.</p>
+                </div>
+            </div>
+        </section>
 
-  <!-- NAVIGATION -->
+        <!-- How It Works -->
+        <section style="background: #ffffff; border-radius: 16px; padding: 40px 35px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); margin-bottom: 30px;">
+            <h2 style="font-size: 2em; color: #1a1a2e; border-bottom: 3px solid #e94560; padding-bottom: 10px;">🔄 How It Works</h2>
+            <ol style="font-size: 1.1em; padding-left: 20px;">
+                <li style="margin-bottom: 15px;"><strong>Choose what to watch</strong> — Add embassy URLs or airline campaign pages through the dashboard.</li>
+                <li style="margin-bottom: 15px;"><strong>Set your preferences</strong> — Tell visa-bot what kind of updates matter to you (new slots, price drops, deadline changes).</li>
+                <li style="margin-bottom: 15px;"><strong>Connect Telegram</strong> — Link your Telegram account with one simple bot token.</li>
+                <li style="margin-bottom: 15px;"><strong>Relax</strong> — visa-bot monitors everything in the background. When something changes, you get an instant alert on your phone.</li>
+            </ol>
+        </section>
 
-  <nav aria-label="Main navigation">
+        <!-- Getting Started / Download -->
+        <section style="background: #ffffff; border-radius: 16px; padding: 40px 35px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); margin-bottom: 30px;">
+            <h2 style="font-size: 2em; color: #1a1a2e; border-bottom: 3px solid #e94560; padding-bottom: 10px;">⬇️ Getting Started</h2>
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="https://github.com/mukesh123-ghb/visa-bot" style="display: inline-block; background: #2d6a4f; color: #ffffff; padding: 16px 40px; border-radius: 50px; text-decoration: none; font-size: 1.2em; font-weight: 700; box-shadow: 0 6px 20px rgba(45, 106, 79, 0.3);">📥 Download visa-bot Here</a>
+            </div>
+            <div style="background: #f8f9fa; border-left: 5px solid #2d6a4f; border-radius: 8px; padding: 20px 25px; margin-top: 25px;">
+                <p style="margin: 0; font-size: 1.05em;"><strong>How to download:</strong> Visit this link to download the application file. Once downloaded, save it to a folder you can easily find (like your Desktop or Documents).</p>
+            </div>
+            <h3 style="color: #1a1a2e; font-size: 1.4em; margin-top: 35px;">🚀 Easy Setup Steps for Windows</h3>
+            <ol style="font-size: 1.05em; padding-left: 20px;">
+                <li style="margin-bottom: 12px;"><strong>Download the file</strong> using the button above. The download will start automatically.</li>
+                <li style="margin-bottom: 12px;"><strong>Find the downloaded file</strong> — it will be in your "Downloads" folder by default.</li>
+                <li style="margin-bottom: 12px;"><strong>Double-click the file</strong> to run the setup wizard. Follow the on-screen instructions — it's as simple as installing any other program.</li>
+                <li style="margin-bottom: 12px;"><strong>Launch visa-bot</strong> from your Start Menu or desktop shortcut after installation.</li>
+                <li style="margin-bottom: 12px;"><strong>Follow the welcome guide</strong> inside the app to connect your Telegram and add your first watched page. You'll be up and running in under 5 minutes!</li>
+            </ol>
+            <p style="font-size: 1em; color: #555; margin-top: 20px;">If you run into any issues, check your internet connection and make sure you have enough free disk space. The whole setup process is designed to be beginner-friendly.</p>
+        </section>
 
-    <a href="retreats.html">
-      RETREATS
-    </a>
+        <!-- Who It's For -->
+        <section style="background: #ffffff; border-radius: 16px; padding: 40px 35px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); margin-bottom: 30px;">
+            <h2 style="font-size: 2em; color: #1a1a2e; border-bottom: 3px solid #e94560; padding-bottom: 10px;">👤 Who Is This For?</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <div style="background: #fafbfc; border-radius: 12px; padding: 20px;">
+                    <h3 style="color: #2d6a4f; margin-top: 0;">🌍 Travelers & Visa Applicants</h3>
+                    <p style="margin: 0;">You've been waiting weeks for an appointment slot to open. visa-bot alerts you the moment it's available, so you can book instantly before it disappears.</p>
+                </div>
+                <div style="background: #fafbfc; border-radius: 12px; padding: 20px;">
+                    <h3 style="color: #2d6a4f; margin-top: 0;">✈️ Deal Hunters</h3>
+                    <p style="margin: 0;">Airline flash sales last hours. Set visa-bot to watch promo pages and get notified the second a new fare drops, so you never miss a bargain.</p>
+                </div>
+                <div style="background: #fafbfc; border-radius: 12px; padding: 20px;">
+                    <h3 style="color: #2d6a4f; margin-top: 0;">💼 Busy Professionals</h3>
+                    <p style="margin: 0;">You don't have time to refresh websites all day. Let visa-bot monitor everything automatically and bring the news to you on Telegram.</p>
+                </div>
+            </div>
+        </section>
 
-    <a href="workshops.html">
-      WORKSHOPS<br>
-      EVENTS
-    </a>
+        <!-- Why Choose -->
+        <section style="background: #ffffff; border-radius: 16px; padding: 40px 35px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); margin-bottom: 30px;">
+            <h2 style="font-size: 2em; color: #1a1a2e; border-bottom: 3px solid #e94560; padding-bottom: 10px;">🏆 Why Choose visa-bot?</h2>
+            <ul style="list-style-type: none; padding: 0; font-size: 1.05em;">
+                <li style="background: #f0f4f8; border-radius: 8px; padding: 15px 20px; margin-bottom: 12px;">✅ <strong>Save hours of manual checking</strong> — visa-bot works 24/7, even while you sleep.</li>
+                <li style="background: #f0f4f8; border-radius: 8px; padding: 15px 20px; margin-bottom: 12px;">🔒 <strong>Your data is private</strong> — self-hosted means no third parties see your information.</li>
+                <li style="background: #f0f4f8; border-radius: 8px; padding: 15px 20px; margin-bottom: 12px;">🎯 <strong>Precise alerts, no spam</strong> — intelligent filtering ensures you only get relevant notifications.</li>
+                <li style="background: #f0f4f8; border-radius: 8px; padding: 15px 20px;">⚙️ <strong>Customizable to your needs</strong> — you decide which pages to watch and what triggers an alert.</li>
+            </ul>
+        </section>
 
-    <a href="reciprocity.html">
-      RECIPROCITY
-    </a>
-
-    <a href="mind-body-soul.html">
-      MIND, BODY, & SOUL
-    </a>
-
-    <a href="inspiration.html">
-      INSPIRATION
-    </a>
-
-
-    <!-- PLUMERIA FLOWER -->
-
-    <a href="index.html"
-       class="flower-link"
-       aria-label="Home and About">
-
-      <svg viewBox="0 0 100 100"
-           xmlns="http://www.w3.org/2000/svg">
-
-        <g fill="#E8A9B5"
-           stroke="#C77C91"
-           stroke-width="1.2">
-
-          <ellipse cx="50" cy="29"
-                   rx="15" ry="25"/>
-
-          <ellipse cx="70" cy="44"
-                   rx="15" ry="25"
-                   transform="rotate(72 70 44)"/>
-
-          <ellipse cx="62" cy="70"
-                   rx="15" ry="25"
-                   transform="rotate(144 62 70)"/>
-
-          <ellipse cx="38" cy="70"
-                   rx="15" ry="25"
-                   transform="rotate(216 38 70)"/>
-
-          <ellipse cx="30" cy="44"
-                   rx="15" ry="25"
-                   transform="rotate(288 30 44)"/>
-
-        </g>
-
-        <circle cx="50" cy="50"
-                r="10"
-                fill="#E8B85C"/>
-
-        <circle cx="50" cy="50"
-                r="4"
-                fill="#F5F0E5"/>
-
-      </svg>
-
-    </a>
-
-  </nav>
-
-
-  <main>
-
-    <!-- SCREEN 1 -->
-
-    <section class="story-panel story-one">
-
-      <p>
-        sentence 1 
-      </p>
-
-    </section>
-
-
-    <!-- SCREEN 2 -->
-
-    <section class="story-panel story-two">
-
-      <p>
-        sentence 2 
-      </p>
-
-    </section>
-
-
-    <!-- SCREEN 3 -->
-
-    <section class="story-panel story-three">
-
-      <p>
-        sentence 3 
-      </p>
-
-    </section>
-
-
-    <!-- ABOUT SECTION -->
-
-    <section class="about" id="about">
-
-      <!-- PHOTO ON LEFT -->
-
-      <img
-        src="images/about.JPG"
-        alt="A photograph introducing Sam"
-        class="about-photo"
-      >
-
-
-      <!-- WRITING ON RIGHT -->
-
-      <div class="about-text">
-
-        <h2>
-          hi! i'm sam 
-        </h2>
-
-        <p>
-          fill in 
-        </p>
-
-        <p>
-         fill in 
-        </p>
-
-        <p>
-          
-        </p>
-
-      </div>
-
-    </section>
-
-  </main>
-
-</body>
-</html>
+        <!-- FAQ -->
+        <section style="background: #ffffff; border-radius: 16px; padding: 40px 35px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); margin-bottom: 30px;">
+            <h2 style="font-size: 2em; color: #1a1a2e; border-bottom: 3px solid #e94560; padding-bottom: 10px;">❓ Frequently Asked Questions
